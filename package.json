@@ -1,5 +1,5 @@
 {
-  "name": "beth-stack",
+  "name": "Bun-Elysia-React-Htmx-Drizzle-Postgres",
   "version": "1.0.50",
   "scripts": {
     "dev": "APP_ENV=dev bun run --watch src/index.tsx"
