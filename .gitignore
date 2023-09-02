@@ -42,4 +42,5 @@ package-lock.json
 **/*.bun
 
 # assets
-./public/assets
+public/assets
+public/manifest.json
