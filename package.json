@@ -4,8 +4,10 @@
   "scripts": {
     "dev:server": "APP_ENV=dev bun run --watch src/index.tsx",
     "dev:client": "bunx --bun vite",
+    "dev": "concurrently -n backend,frontend -c \"auto\" \"bun run dev:server\" \"bun run dev:client\" ",
     "build:server": "tsc --noEmit && bun build --minify  --outdir=out ./src/index.tsx",
-    "build:client": "bunx --bun vite build",
+    "build:client": "bunx --bun vite build --emptyOutDir",
+    "build": "concurrently -n backend,frontend -c \"auto\" \"bun run build:server\" \"bun run build:client\" ",
     "preview:vite": "bunx --bun vite preview"
   },
   "dependencies": {
@@ -19,6 +21,7 @@
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "bun-types": "latest",
+    "concurrently": "^8.2.1",
     "typescript": "^5.2.2",
     "vite-plugin-dts": "^3.5.3"
   },
