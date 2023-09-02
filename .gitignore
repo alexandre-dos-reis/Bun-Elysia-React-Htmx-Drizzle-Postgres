@@ -44,3 +44,4 @@ package-lock.json
 # assets
 public/assets
 public/manifest.json
+!public/.gitkeep
