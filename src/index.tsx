@@ -30,12 +30,12 @@ const app = new Elysia()
   .use(jsxPlugin)
   .get("/", () => (
     <Layout>
-      <h1>Hello</h1>
+      <h1 className="text-3xl font-bold underline">Hello</h1>
     </Layout>
   ))
   .get("/contact", () => (
     <Layout>
-      <h1>Contact</h1>
+      <h1 className="text-3xl font-bold underline">Contact</h1>
     </Layout>
   ))
   .listen(3000);
