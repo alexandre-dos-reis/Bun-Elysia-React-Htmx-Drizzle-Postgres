@@ -2,17 +2,25 @@
   "name": "Bun-Elysia-React-Htmx-Drizzle-Postgres",
   "version": "1.0.50",
   "scripts": {
-    "dev": "APP_ENV=dev bun run --watch src/index.tsx"
+    "dev:server": "APP_ENV=dev bun run --watch src/index.tsx",
+    "dev:client": "bunx --bun vite",
+    "build:server": "tsc --noEmit && bun build --minify  --outdir=out ./src/index.tsx",
+    "build:client": "bunx --bun vite build",
+    "preview:vite": "bunx --bun vite preview"
   },
   "dependencies": {
     "elysia": "latest",
+    "htmx.org": "^1.9.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vite": "^4.4.9"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
-    "bun-types": "latest"
+    "bun-types": "latest",
+    "typescript": "^5.2.2",
+    "vite-plugin-dts": "^3.5.3"
   },
-  "module": "src/index.js"
+  "module": "src/index.jsx"
 }

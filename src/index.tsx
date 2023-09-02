@@ -1,10 +1,12 @@
 import { Elysia } from "elysia";
 import { jsxPlugin } from "./utils/jsxPlugin";
 import { ReactNode } from "react";
+import { getViteAssets } from "./utils/viteConfig";
 
 const Layout = ({ children }: { children: ReactNode }) => (
   <html>
     <head>
+      {getViteAssets({ isDev: process.env.APP_ENV === "dev" })}
       <title>The Ultimate Stack !</title>
     </head>
     <nav>
@@ -17,7 +19,10 @@ const Layout = ({ children }: { children: ReactNode }) => (
         </li>
       </ul>
     </nav>
-    <body>{children}</body>
+    <body>
+      <div id="app"></div>
+      {children}
+    </body>
   </html>
 );
 
