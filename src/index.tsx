@@ -1,41 +1,18 @@
 import { Elysia } from "elysia";
 import { jsxPlugin } from "./utils/jsxPlugin";
-import { ReactNode } from "react";
-import { getViteAssets } from "./utils/viteConfig";
-
-const Layout = ({ children }: { children: ReactNode }) => (
-  <html>
-    <head>
-      {getViteAssets({ isDev: process.env.APP_ENV === "dev" })}
-      <title>The Ultimate Stack !</title>
-    </head>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/contact">Contact</a>
-        </li>
-      </ul>
-    </nav>
-    <body>
-      <div id="app"></div>
-      {children}
-    </body>
-  </html>
-);
+import { Layout } from "./components/Layout";
+import { Title } from "./components/Title";
 
 const app = new Elysia()
   .use(jsxPlugin)
   .get("/", () => (
     <Layout>
-      <h1 className="text-3xl font-bold underline">Hello</h1>
+      <Title>Hello</Title>
     </Layout>
   ))
   .get("/contact", () => (
     <Layout>
-      <h1 className="text-3xl font-bold underline">Contact</h1>
+      <Title>Contact</Title>
     </Layout>
   ))
   .listen(3000);
