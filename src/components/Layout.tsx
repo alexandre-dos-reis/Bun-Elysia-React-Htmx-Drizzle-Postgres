@@ -7,6 +7,7 @@ export const Layout = ({ children }: { children: ReactNode }) => (
       {getViteAssets({ isDev: process.env.APP_ENV === "dev" })}
       <title>The Ultimate Stack !</title>
     </head>
+    <div id="app" />
     <nav>
       <ul>
         <li>
