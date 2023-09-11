@@ -1,7 +1,8 @@
-import { ReactNode } from "react";
+import { PropsWithChildren } from "@elysiajs/html";
 import { getViteAssets } from "../utils/viteConfig";
+import { cn } from "@/utils/cn";
 
-export const Layout = ({ children }: { children: ReactNode }) => (
+export const Layout = ({ children }: PropsWithChildren) => (
   <html>
     <head>
       {getViteAssets({ isDev: process.env.APP_ENV === "dev" })}
@@ -19,8 +20,7 @@ export const Layout = ({ children }: { children: ReactNode }) => (
       </ul>
     </nav>
     <body>
-      <div id="app"></div>
-      {children}
+      <main class={cn("flex justify-center items-center")}>{children}</main>
     </body>
   </html>
 );

@@ -1,4 +1,8 @@
-// https://vitejs.dev/guide/backend-integration.html
 import "vite/modulepreload-polyfill";
 import "./style.css";
-import "htmx.org";
+import "sweetalert2";
+import * as hyperscript from "hyperscript.org";
+import htmx from "htmx.org";
+
+hyperscript.browserInit();
+window.htmx = htmx;

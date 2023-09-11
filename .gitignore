@@ -45,3 +45,6 @@ package-lock.json
 public/assets
 public/manifest.json
 !public/.gitkeep
+
+# docker
+.docker
